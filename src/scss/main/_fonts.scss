@@ -1,0 +1,57 @@
+@font-face {
+  font-family:'TimesNewRomanMT-Medium';
+  src: url('-/fonts/text/35F65D_1_0.eot');
+  src: url('-/fonts/text/35F65D_1_0.eot?#iefix') format('embedded-opentype'),
+    url('-/fonts/text/35F65D_1_0.woff') format('woff'),
+    url('-/fonts/text/35F65D_1_0.ttf') format('truetype');
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family:'TimesNewRomanMT-Italic';
+  src: url('-/fonts/text/35F65D_0_0.eot');
+  src: url('-/fonts/text/35F65D_0_0.eot?#iefix') format('embedded-opentype'),
+    url('-/fonts/text/35F65D_0_0.woff') format('woff'),
+    url('-/fonts/text/35F65D_0_0.ttf') format('truetype');
+  font-style: normal;
+  font-stretch: normal;
+}
+
+
+@font-face {
+  font-family:'PostGrotesk-Book';
+  src: url('-/fonts/text/PostGrotesk-Book.eot');
+  src: url('-/fonts/text/PostGrotesk-Book.eot?#iefix') format('embedded-opentype'),
+    url('-/fonts/text/PostGrotesk-Book.woff') format('woff');
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family:'PostGrotesk-Bold';
+  src: url('-/fonts/text/PostGrotesk-Bold.eot');
+  src: url('-/fonts/text/PostGrotesk-Bold.eot?#iefix') format('embedded-opentype'),
+    url('-/fonts/text/PostGrotesk-Bold.woff') format('woff');
+  font-style: normal;
+  font-stretch: normal;
+}
+
+
+
+@mixin timesMedium {
+	font-family: "TimesNewRomanMT-Medium", serif;
+}
+
+@mixin timesItalic {
+	font-family: "TimesNewRomanMT-Italic", serif;
+}
+
+@mixin postBook {
+	font-family: "PostGrotesk-Book", sans-serif;
+}
+
+@mixin postBold {
+	font-family: "PostGrotesk-Bold", sans-serif;
+}	
+

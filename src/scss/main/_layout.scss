@@ -1,0 +1,49 @@
+//---Base font-size of 62.5% to have the convenience of sizing rems in a way that is similar to using px. 14px = 1.4rem
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+
+     &.no-scroll {
+        height: 100%;
+        overflow: hidden;
+    }
+
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+body {
+    background: #fff;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+    color: $navy;
+    transition: opacity .5s $cubic-ease-out;
+    @include postBook();
+
+    &.no-scroll {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    &.logged-in {
+        margin-top: -32px;
+    }
+
+    &.hide {
+        opacity: 0;
+    }
+}
+
+
+body,
+html {
+    height: 100%;
+}
+

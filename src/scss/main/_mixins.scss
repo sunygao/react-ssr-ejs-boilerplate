@@ -1,0 +1,8 @@
+//---Grid
+@mixin colRules($colSpan, $gutter) {
+  width: calc(#{$colSpan} - #{$gutter});
+}
+
+@mixin colOffsetRules($colSpan, $gutter) {
+  margin-left: calc(#{$colSpan} - #{$gutter/2});
+}

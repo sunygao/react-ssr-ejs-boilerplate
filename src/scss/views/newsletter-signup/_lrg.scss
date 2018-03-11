@@ -1,0 +1,22 @@
+.newsletter-signup {
+	padding: 80px 0;
+
+	form {
+		margin-top: 10px;
+		text-align: center;
+
+		input[type='email'] {
+			border: 0px;
+			border-bottom: 3px solid $navy;
+			display: block;
+			width: 100%;
+			padding: 10px;
+			font-size: 20px;
+			text-align: center;
+		}
+
+		input[type='submit'] {
+			margin-top: 20px;
+		}
+	}
+}

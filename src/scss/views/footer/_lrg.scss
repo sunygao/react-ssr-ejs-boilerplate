@@ -1,0 +1,23 @@
+footer {
+	background: $navy;
+	color: $white;
+	padding: 80px 0;
+
+	.footer-nav {
+		margin-top: 10px;
+		
+		a {
+			font-size: 14px;
+			text-transform: uppercase;
+		}
+
+		.divider {
+			font-size: 14px; 
+			margin: 0 5px;
+		}
+	}
+
+	.copyright {
+		margin: auto;
+	}
+}

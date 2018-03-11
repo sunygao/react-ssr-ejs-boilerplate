@@ -1,0 +1,162 @@
+.global-header {
+	color: $white;
+	text-align: center;
+	// height: $header-height;
+	position: relative;
+	padding: 25px 25px 80px;
+
+	.container {
+		height: 100%;	
+	}
+
+	.logo {
+		display: block;
+		background: url('-/img/logo-white.png') no-repeat;
+		background-size: 100% auto;
+		width: 100%;
+		padding-bottom: 11%;
+		height: 0;
+		text-indent: -9999px;
+		margin: auto;	
+	}
+
+	.btn-hamburger {
+		position: absolute;
+		height: 26px;
+		z-index: 5;
+		left: $page-gutter-desktop;
+		top: 0;
+		cursor: pointer;
+		top: 50%;
+		transform: translateY(-50%);
+
+		span {
+			display:block;
+			width: 30px;
+			height: 2px;
+			margin-bottom: 5px;
+			position: relative;
+			background: $white;
+
+			.transformer {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				transform-origin: 50% 50%;
+				transition: all 300ms $cubic-ease-out;
+			}
+		}
+	}
+
+	.main-menu {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		visibility: hidden;
+		opacity: 0;
+		background: rgba($navy, .9);
+		transform: translateY(-100%);
+		transition: opacity .2s $cubic-ease-out;
+
+		.row,
+		.container,
+		.col {
+			height: 100%;
+			position: relative;
+		}
+
+		nav {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 100%;
+
+			.menu-item {
+				text-align: left;
+				border-bottom: 2px solid rgba($white, .3);
+
+				&:last-child {
+					border-bottom: 0;
+				}
+
+				a {
+					padding: 25px $gutter-desktop;
+					display: block;
+					font-size: 3.81vw;
+					@include timesItalic;
+					position: relative;
+					transition: all .2s $cubic-ease-out;
+
+					&:after {
+						content: '';
+						background: url('-/img/arrow-right.svg') no-repeat 0 50%;
+						position: absolute;
+						right: 0;
+					    width: 1.5vw;
+					    top: 0;
+						height: 100%;
+						opacity: 0;
+						transition: all .2s $cubic-ease-out;
+						transform: translateX(-15px);
+					}
+
+					&:hover {
+						color: $lavender;
+						transform: translateX(15px);
+
+						&:after {
+							opacity: 1;
+						}
+					}
+				}
+
+
+			}
+
+			.current-menu-item {
+				a {
+					color: $lavender;
+				}
+			}
+
+			.social-links {
+				text-align: left;
+				margin: $gutter-desktop 0 0 $gutter-desktop;
+			}
+		}
+	}
+
+
+	&.is-open {
+		.main-menu {
+			visibility: visible;
+			opacity: 1;
+			transform: translateY(0%);
+			&:before {
+				opacity: 1;
+			}
+		}
+
+		.btn-hamburger {
+			span {
+				background: transparent;
+
+				.transformer {
+					background: $white;
+
+					&:first-child {
+						transform: rotate(45deg);
+					}
+					&:last-child {
+						transform: rotate(-45deg);
+					}
+				}
+			}
+		}
+
+	}
+
+}

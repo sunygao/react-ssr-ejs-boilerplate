@@ -1,0 +1,32 @@
+//---Breakpoints
+$bp-mobile-s: 320px;
+$bp-mobile : 640px;
+$bp-tablet : 768px;
+$bp-tablet-l : 1024px;
+$bp-desktop : 1400px;
+
+//---Grid
+$num_columns: 8; 
+$max_content_width: 100%;
+$page-gutter-desktop: 70px;
+$page-gutter-mobile: 20px;
+$page-gutter-mobile-s: 20px;
+$gutter-desktop: 30px;
+$gutter-mobile: 10px;
+$gutter-tablet-l: 30px;
+$gutter-tablet: 30px;
+
+//---Colors
+$navy: #001633;
+$lavender: #CCA5ED;
+$warm-grey: #9E9E9C;
+$chartreuse: #D1EF59;
+$turquoise: #6BE2CC;
+$white: #fff;
+
+$header-height: 15vw;
+$header-height-extra-lrg: 232px;
+$header-height-mobile: 100px;
+$scroll-container-padding-top: 80px;
+$scroll-container-padding-bottom: 250px;
+

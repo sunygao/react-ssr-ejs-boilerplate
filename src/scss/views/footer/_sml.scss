@@ -1,0 +1,19 @@
+footer {
+	.footer-nav {
+		a {
+			display: block;
+			margin: 20px 0;
+			@include postBold;
+			font-size: 11px;
+			text-decoration: underline;
+		}
+
+		.divider {
+			display: none;
+		}
+	}
+
+	.copyright {
+		max-width: 210px;
+	}
+}

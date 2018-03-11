@@ -1,0 +1,56 @@
+/*
+Theme Name: Forerunner 2018
+Version: 1.0
+Author: Suny Gao
+Author URI: http://sunygao.com
+*/
+
+/* ---------------------------------------------
+
+SCSS
+
+Add all scss files here.
+
+Run these commands to watch and complile:
+// First time:
+$ npm install
+
+// Every time:
+$ npm start
+
+*/
+
+
+@import "main/reset";
+@import "main/variables";
+@import "main/media-queries";
+@import "main/mixins";
+@import "main/grid";
+@import "main/zindexes";
+@import "main/fonts";
+@import "main/iconfont";
+@import "main/animations";
+@import "main/layout";
+
+@import "views/lrg";
+
+@media #{$mq-desktop-l} {
+  @import "views/extra_lrg";
+}
+
+@media #{$mq-tablet-l} {
+  @import "views/med_lrg";
+}
+
+@media #{$mq-tablet} {
+  @import "views/med";
+}
+
+@media #{$mq-mobile} {
+  @import "views/sml";
+}
+
+@media #{$mq-mobile-s} {
+  @import "views/x_sml";
+}
+

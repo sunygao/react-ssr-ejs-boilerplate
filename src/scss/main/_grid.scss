@@ -1,0 +1,264 @@
+/* ----- Grid container element, has page gutters, or can be full bleed ----- */
+
+.container {
+	position: relative;
+	padding: 0 $page-gutter-desktop 0;
+  max-width: $max_content_width;
+  margin: auto;
+  
+	@media #{$mq-mobile} {
+		padding: 0 $page-gutter-mobile 0;
+	}
+
+  @media #{$mq-mobile-s} {
+    padding: 0 $page-gutter-mobile-s 0;
+  }
+
+  @media print {
+    overflow: visible;
+  }
+
+}
+
+/* ----- Base class for columns ----- */
+.col {
+  width: 100%;
+
+  @media #{$mq-desktop} {
+    margin-left: $gutter-desktop/2;
+    margin-right: $gutter-desktop/2;
+  }
+
+  @media #{$mq-tablet-l-only} {
+    margin-left: $gutter-tablet-l/2;
+    margin-right: $gutter-tablet-l/2;
+  }
+
+  @media #{$mq-tablet-only} {
+    margin-left: $gutter-tablet/2;
+    margin-right: $gutter-tablet/2;
+  }
+
+  @media #{$mq-mobile} {
+    margin-left: $gutter-mobile/2;
+    margin-right: $gutter-mobile/2;
+  }
+
+  @media print {
+    width: 100% !important;
+  }
+
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+/* ----- Wrap columns with this element - sets flexbox styles, and offsets left and right column margins ----- */
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-flex-end {
+  justify-content: flex-end;
+}
+
+.justify-content-space-between {
+  justify-content: space-between;
+}
+
+.justify-content-space-around {
+  justify-content: space-around;
+}
+
+.align-items-center {
+  display: flex;
+  align-items: center;
+}
+
+.align-items-flex-start {
+  display: flex;
+  align-items: flex-start;
+}
+
+
+$colWidth : 100/$num-columns;
+
+/* ----- separate loops so overrides work ----- */
+@for $i from 1 to 12 {
+  /* ----- All column classes ----- */
+  /*Useage: .colAll{i}*/
+ 
+  $colSpan : $colWidth * $i + %;
+
+  .colAll#{$i} {
+      @extend .col;
+
+      @media #{$mq-desktop} {
+        @include colRules($colSpan, $gutter-desktop);
+      }
+
+      @media #{$mq-tablet-l} {
+        @include colRules($colSpan, $gutter-tablet-l);
+      }
+
+      @media #{$mq-tablet} {
+         @include colRules($colSpan, $gutter-tablet);
+      }
+
+      @media #{$mq-mobile} {
+         @include colRules($colSpan, $gutter-mobile);
+      }
+
+   }
+}
+
+
+@for $i from 1 to 12 {
+  /* ----- desktop column classes ----- */
+  /*Useage: .colDesktop{i}*/
+ 
+  $colSpan : $colWidth * $i + %;
+
+  .colDesktop#{$i} {
+      @extend .col;
+
+      @media #{$mq-desktop} {
+        @include colRules($colSpan, $gutter-desktop);
+      }
+   }
+}
+
+@for $i from 1 to 12 {
+  /* ----- tablet L column classes ----- */
+  /*Useage: .coltabletL{i}*/
+ 
+  $colSpan : $colWidth * $i + %;
+
+  .colTabletL#{$i} {
+      @extend .col;
+
+      @media #{$mq-tablet-l} {
+        @include colRules($colSpan, $gutter-tablet-l);
+      }
+   }
+}
+
+@for $i from 1 to 12 {
+  /* ----- tablet column classes ----- */
+  /*Useage: .coltablet{i}*/
+ 
+  $colSpan : $colWidth * $i + %;
+
+  .colTablet#{$i} {
+      @extend .col;
+
+      @media #{$mq-tablet} {
+        @include colRules($colSpan, $gutter-tablet);
+      }
+   }
+}
+
+@for $i from 1 to 12 {
+  /* ----- mobile column classes ----- */
+  /*Useage: .colmobile{i}*/
+ 
+  $colSpan : $colWidth * $i + %;
+
+  .colMobile#{$i} {
+      @extend .col;
+
+      @media #{$mq-mobile} {
+        @include colRules($colSpan, $gutter-mobile);
+      }
+   }
+}
+
+////column offsets
+/* ----- separate loops so overrides work ----- */
+@for $i from 1 to 12 {
+  /* ----- All column classes ----- */
+  /*Useage: .colOffsetAll{i}*/
+ 
+  $colSpan : $colWidth * $i + %;
+
+  .colOffsetAll#{$i} {
+      @media #{$mq-desktop} {
+        @include colOffsetRules($colSpan, $gutter-desktop);
+      }
+
+      @media #{$mq-tablet-l-only} {
+        @include colOffsetRules($colSpan, $gutter-tablet-l);
+      }
+
+      @media #{$mq-tablet-only} {
+         @include colOffsetRules($colSpan, $gutter-tablet);
+      }
+
+      @media #{$mq-mobile} {
+         @include colOffsetRules($colSpan, $gutter-mobile);
+      }
+
+   }
+}
+
+@for $i from 1 to 12 {
+  /* ----- desktop column offset classes ----- */
+  /*Useage: .colOffsetDesktop{i}*/
+ 
+  $colSpan : $colWidth * $i + %;
+
+  .colOffsetDesktop#{$i} {
+      @media #{$mq-desktop} {
+        @include colOffsetRules($colSpan, $gutter-desktop);
+      }
+   }
+}
+
+@for $i from 1 to 12 {
+  /* ----- tablet l column offset classes ----- */
+  /*Useage: .colOffsetTabletL{i}*/
+ 
+  $colSpan : $colWidth * $i + %;
+
+  .colOffsetTabletL#{$i} {
+      @media #{$mq-tablet-l-only} {
+        @include colOffsetRules($colSpan, $gutter-tablet-l);
+      }
+   }
+}
+
+
+@for $i from 1 to 12 {
+  /* ----- tablet column offset classes ----- */
+  /*Useage: .colOffsetTablet{i}*/
+ 
+  $colSpan : $colWidth * $i + %;
+
+  .colOffsetTablet#{$i} {
+      @media #{$mq-tablet-only} {
+        @include colOffsetRules($colSpan, $gutter-tablet);
+      }
+   }
+}
+
+
+@for $i from 1 to 12 {
+  /* ----- mobile column offset classes ----- */
+  /*Useage: .colOffsetMobile{i}*/
+ 
+  $colSpan : $colWidth * $i + %;
+
+  .colOffsetMobile#{$i} {
+      @media #{$mq-mobile} {
+        @include colOffsetRules($colSpan, $mq-mobile);
+      }
+   }
+}
+

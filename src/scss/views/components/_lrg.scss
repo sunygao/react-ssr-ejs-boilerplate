@@ -1,0 +1,280 @@
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display:block;
+    width: 100%;
+}
+
+button {
+	padding: 0;
+	border: 0;
+	background: transparent;
+}
+input[type='submit'] {
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    background: transparent;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: $navy;
+}
+::-moz-placeholder { /* Firefox 19+ */
+   color: $navy;
+}
+:-ms-input-placeholder { /* IE 10+ */
+   color: $navy;
+}
+:-moz-placeholder { /* Firefox 18- */
+   color: $navy;
+}
+
+
+.headline-1 {
+	font-size: 4vw; //ie fix
+	font-size: 7vmax;
+	@include timesItalic;
+	line-height: 1.2;
+}
+
+.headline-2 {
+	font-size: 4vw;
+	@include timesItalic;
+	line-height: 1.2;
+}
+
+.headline-3 {
+	font-size: 3.5vw;
+	line-height: 1.2;
+	@include postBook;
+}
+
+.headline-4 {
+	font-size: 3.3vw;
+	@include timesItalic;
+	line-height: 1.2;
+}
+
+
+.body-copy {
+	font-size: 20px;
+	line-height: 1.4;
+	@include postBook;
+}
+
+.caption {
+	font-size: 20px;
+	line-height: 1;
+	@include postBold;
+}
+
+.text-centered {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-white {
+	color: $white;
+}
+
+.text-lavender {
+	color: $lavender;
+}
+
+.text-underline {
+	text-decoration: underline;
+}
+
+.cta {
+    background: $lavender;
+    font-size: 20px;
+    padding: 10px 30px;
+    color: $navy;
+    display: inline-block;
+    transition: all .2s $cubic-ease-out;
+    @include timesItalic;
+
+    &:hover {
+    	color: $white;
+    }
+}
+
+.cta-secondary {
+	display: inline-block;
+    @include timesItalic;
+    font-size: 28px;
+    color: $navy;
+}
+
+.copyright {
+	font-size: 14px;
+	text-transform: uppercase;
+	line-height: 1.3;
+	@include postBold;
+}
+
+
+.btn-social {
+	font-size: 20px;
+	color: #fff;
+	display: inline-block;
+	margin-right: 25px;
+	transition: all .2s $cubic-ease-out;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	&:hover {
+		color: $lavender;
+	}
+
+	span {
+		text-indent: -9999px;
+		display: inline-block;
+	}
+
+	&.icon-linkedin {
+		&:before {
+			font-size: 1.2em;
+		}
+	}
+}
+
+// .company-module {
+// 	position: relative;
+// 	width: 100%;
+// 	height: 100%;
+	
+// 	.inner-wrapper {
+// 		width: 100%;
+// 		position: absolute;
+// 		height: 100%;
+// 	}
+
+// 	.caption-container {
+// 		position: absolute;
+// 		text-align: center;
+// 		width: 100%;
+// 	}
+
+// 	.company-image {
+// 		position: absolute;
+// 		width: 100%;
+// 		height: 100%;
+// 		background-size: cover;
+// 		background-position: center;
+// 	}
+
+// 	&.caption-left {
+// 		min-height: 320px;
+
+// 		.caption-container {
+// 			left: calc(-1 * (#{$gutter-desktop} + 20px));
+// 			width: calc(#{$gutter-desktop} + 20px);
+// 			height: 100%;
+
+
+// 			.caption {
+// 				transform: rotate(-90deg) translate(-50%, -50%);
+// 			    position: absolute;
+// 			    top: 50%;
+// 			    transform-origin: 0 0;
+// 			    white-space: nowrap;
+// 				left: 50%;
+// 			}
+			
+// 		}
+// 	}
+
+// 	&.caption-bottom {
+// 		.caption-container {
+// 			bottom: calc(-1 * (#{$gutter-desktop} + 20px));
+// 		}
+// 	}
+// }
+.company-module {
+	position: relative;
+	width: 100%;
+	//height: 100%;
+
+	
+	.inner-wrapper {
+		width: 100%;
+		position: absolute;
+		height: 100%;
+	}
+
+	.caption-container {
+		position: absolute;
+		text-align: center;
+		width: 100%;
+	}
+
+	.company-image {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		background-position: center;
+	}
+
+
+	// &.caption-left {
+	// 	min-height: 320px;
+
+	// 	.caption-container {
+	// 		left: calc(-1 * (#{$gutter-desktop} + 20px));
+	// 		width: calc(#{$gutter-desktop} + 20px);
+	// 		height: 100%;
+
+
+	// 		.caption {
+	// 			transform: rotate(-90deg) translate(-50%, -50%);
+	// 		    position: absolute;
+	// 		    top: 50%;
+	// 		    transform-origin: 0 0;
+	// 		    white-space: nowrap;
+	// 			left: 50%;
+	// 		}
+			
+	// 	}
+	// }
+	
+	&.caption-left {
+		
+		.company-image {
+			margin-left: ($gutter-desktop + 10px);
+			width: calc(100% - (#{$gutter-desktop} + 10px));
+		}
+
+		.caption-container {
+			width: calc(#{$gutter-desktop} + 10px);
+			height: 100%;
+			z-index: 2;
+
+			.caption {
+				transform: rotate(-90deg) translate(-50%, 0%);
+			    position: absolute;
+			    top: 50%;
+			    transform-origin: 0 0;
+			    white-space: nowrap;
+			
+			}
+			
+		}
+	}
+
+	&.caption-bottom {
+		.caption-container {
+			bottom: calc(-1 * (#{$gutter-desktop} + 10px));
+		}
+	}
+}

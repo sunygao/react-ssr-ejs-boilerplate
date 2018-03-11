@@ -1,0 +1,17 @@
+.global-header {
+	//height: $header-height-mobile;
+	
+	.btn-hamburger {
+		left: $page-gutter-mobile;
+	}
+
+	.main-menu {
+		nav {
+			.menu-item {
+				a {
+					font-size: 11.2vw;
+				}
+			}
+		}
+	}
+}

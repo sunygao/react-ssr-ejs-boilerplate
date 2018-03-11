@@ -1,0 +1,39 @@
+.page.home {
+	.hero {
+		height: 90%;
+		min-height: 90%;
+
+		.slide {
+			padding-top: $header-height-mobile;
+		}
+
+		.text-wrapper {
+			//margin-top: $header-height-mobile/2;
+		}
+
+		.image-mobile {
+			display: block;
+		}
+	}
+
+	.subhead {
+		a {
+			margin-top: 20px;
+		}
+	}
+	
+	.company-grid {
+		padding: 50px 0;
+
+		.featured-description {
+			p {
+				font-size: 5vw;
+			}
+			a {
+				width: 100%;
+				margin-top: 25px;
+				text-align: center;
+			}
+		}
+	}	
+}

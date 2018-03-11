@@ -1,0 +1,23 @@
+.page.bpg-portfolio {
+	background: $navy;
+
+	.name-list {
+		left: 0;
+		padding-bottom: 0;
+		height: auto;
+	}
+
+	.photo-container {
+		display: none;
+	}
+
+	.image-mobile {
+		display: block;
+	}
+
+	.scroll {
+		overflow: auto;
+   		padding-right: 0;
+	    position: static;
+	}
+}

@@ -1,0 +1,28 @@
+.mini-footer {
+	padding: 50px 0;
+	position: relative;
+
+	a {
+		@include timesItalic;
+		font-size: 2.3vw;
+		transition: all .2s $cubic-ease-out;
+		width: 25%;
+		display: inline-block;
+		text-align: center;
+
+		&:hover {
+			color: $lavender;
+		}
+	}
+
+	&:after {
+		content: '';
+		left: 0;
+		height: 1px;
+		display: block;
+		@extend .colAll8;
+		background: rgba(255,255,255,.3);
+		position: absolute;
+		bottom: 0;
+	}
+}

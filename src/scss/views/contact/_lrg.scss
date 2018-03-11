@@ -1,0 +1,60 @@
+.contact {
+	background: $navy;
+	color: $white;
+	padding: 160px 0 0;
+	display: flex; //to vertically center content
+
+	.container {
+		width: 100%;
+	}
+
+
+	.content-wrapper {
+		display: flex;
+	}
+
+	.contact-info-row{
+		justify-content: center;
+	}
+
+	.logo-wrapper {
+		text-align: center;
+	}
+
+	.logo {
+		background: url('-/img/f-logo-white.png') no-repeat;
+		background-size: 100% auto;
+		width: 35px;
+		height: 45px;
+		display: inline-block;
+	   	margin-top: 60px;
+	}
+
+	li {
+		margin-bottom: 10px;
+	}
+
+	a,
+	p {
+		font-size: 2.3vw;
+		@include timesItalic;
+		line-height: 1.3;
+		transition: all .2s $cubic-ease-out;
+	}
+
+	a {
+
+		&:hover {
+			color: $lavender;
+		}
+
+		.icon {
+			position: relative;
+			top: .6vw;
+		}
+
+		p {
+			white-space: nowrap;
+		}
+	}
+}
