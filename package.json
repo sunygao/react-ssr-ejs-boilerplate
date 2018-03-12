@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "babel-node --presets=es2015,react server.js & parallelshell 'npm run watch:js' 'npm run lint'",
+    "start": "babel-node --presets=es2015,react,babel-preset-stage-3 server.js & parallelshell 'npm run watch:js' 'npm run lint'",
     "watch:js": "ENV_PROD=0 ENV_PRERELEASE=0 BABEL_ENV=development webpack --progress --colors --watch --cache",
     "lint": "eslint ./src/js/**/*.js; exit 0",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -42,6 +42,7 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
+    "react-transition-group": "^2.2.1",
     "sass-loader": "^6.0.6",
     "serve-favicon": "^2.4.5",
     "style-loader": "^0.20.2",

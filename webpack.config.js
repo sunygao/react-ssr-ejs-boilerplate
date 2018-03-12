@@ -31,7 +31,7 @@ const plugins = [
     }),
     new webpack.HotModuleReplacementPlugin(),
 
-    new ExtractTextPlugin('style.css')
+    new ExtractTextPlugin('../css/app.css')
    
 ];
 
@@ -105,7 +105,7 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: 'babel-loader',
                 query: {
-                    presets: ['es2015', 'react']
+                    presets: ['es2015', 'react', 'babel-preset-stage-3']
                 }
             },
             {

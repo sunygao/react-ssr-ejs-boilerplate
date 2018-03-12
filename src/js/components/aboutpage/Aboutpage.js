@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import TransitionHook from "../../helpers/transitionHook";
+import PageComponent from '../../abstract/PageComponent';
 
-export default class Aboutpage extends React.Component{
+
+class Aboutpage extends PageComponent{
 	constructor(props){
 		super(props);
   	}
@@ -10,4 +13,7 @@ export default class Aboutpage extends React.Component{
     	return <h1>about page!!</h1>;
   	}
 }
+
+Aboutpage = TransitionHook(Aboutpage);
+export default Aboutpage;
 

@@ -1,21 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Link } from 'react-router-dom';
+import TransitionHook from "../../helpers/transitionHook";
+import PageComponent from '../../abstract/PageComponent';
 
-
-export default class Homepage extends React.Component{
+class Homepage extends PageComponent{
 	constructor(props){
 		super(props);
-  	}
+  	 //console.log('render home', props);
+    }
+
 
   	render() {
     	return (
     		<div>
-    		    <Link to="/about">to about</Link>
-
+    		   
     			<h1>Homepage!!</h1>
     		</div>
     	);
   	}
 }
 
+
+Homepage = TransitionHook(Homepage);
+export default Homepage;
