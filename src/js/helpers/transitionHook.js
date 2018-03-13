@@ -10,9 +10,7 @@ const TransitionHook = ChildComponent => class TransitionHook
       this.timerShow = null;
       this.child = null;
       this.isShown = false;
-
-    console.log(this.props.status);
- }
+   }
 
   componentDidMount() {
     this.animate();

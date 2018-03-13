@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {PureComponent, PropTypes} from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Transition, TransitionGroup } from 'react-transition-group';
-import { Routes } from '../../routes';
+import { Routes } from '../../../../routes';
 import { Link } from 'react-router-dom';
-import TransitionRoute from './helpers/transitionRoute';
-import Layout from './components/layout/Layout';
+import TransitionRoute from '../../helpers/transitionRoute';
+import Layout from '../layout/Layout';
+
 
 const DURATION = 500;
 
@@ -17,15 +18,12 @@ export default class App extends React.Component{
     return (
       <div>
         <Link to="/">homepage</Link>
-        <Link to="/about">about page</Link>
+        <Link to="/grid-view">grid page</Link>
 
         <Route path="/" render={({location, match}) => 
           <TransitionGroup>
               <Transition key={location.key} timeout={DURATION} appear>
               {(status) => {
-                
-                //console.log('the status', status, {location});
-
                 return <div>
                   <Switch location={location} key={location.key}>
                     {

@@ -4,16 +4,16 @@ import TransitionHook from "../../helpers/transitionHook";
 import PageComponent from '../../abstract/PageComponent';
 
 
-class Aboutpage extends PageComponent{
+class Gridview extends PageComponent{
 	constructor(props){
 		super(props);
   	}
 
   	render() {
-    	return <h1>about page!!</h1>;
+    	return <h1>grid page!!</h1>;
   	}
 }
 
-Aboutpage = TransitionHook(Aboutpage);
-export default Aboutpage;
+Gridview = TransitionHook(Gridview);
+export default Gridview;
 

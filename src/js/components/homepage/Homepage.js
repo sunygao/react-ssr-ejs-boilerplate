@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TransitionHook from "../../helpers/transitionHook";
 import PageComponent from '../../abstract/PageComponent';
 
-class Homepage extends PageComponent{
-	constructor(props){
+class HomepageComponent extends PageComponent{
+	 constructor(props){
 		super(props);
   	 //console.log('render home', props);
     }
@@ -13,13 +12,11 @@ class Homepage extends PageComponent{
   	render() {
     	return (
     		<div>
-    		   
-    			<h1>Homepage!!</h1>
+    			<h1>HomepageComponent!!!!!</h1>
     		</div>
     	);
   	}
 }
 
 
-Homepage = TransitionHook(Homepage);
-export default Homepage;
+export default HomepageComponent;

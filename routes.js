@@ -1,22 +1,22 @@
-import Homepage from './src/js/components/homepage/Homepage';
-import Aboutpage from './src/js/components/aboutpage/Aboutpage';
+import HomepageContainer from './src/js/containers/homepage/Homepage';
+import GridviewContainer from './src/js/containers/gridview/Gridview';
 
 
 export const paths = {
   homepage: '/',
-  aboutpage: '/about'
+  gridview: '/grid-view'
 }
 
 export const Routes = [
   {
     path: paths.homepage,
     exact: true,
-    component: Homepage
+    component: HomepageContainer
   },
   {
-    path: paths.aboutpage,
+    path: paths.gridview,
     exact: true,
-    component: Aboutpage
+    component: GridviewContainer
   }
 ];
 

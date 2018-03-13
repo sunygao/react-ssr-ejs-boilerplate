@@ -4,8 +4,6 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-
-const includePath = 'src/js/';
 const publicPath = '/js/';
 const filename = 'app';
 
@@ -82,7 +80,7 @@ module.exports = {
     If you pass an object: Multiple entry bundles are created. The key is the chunk name. The value can be a string or an array.
     */
 
-    entry: ['babel-polyfill', 'Index.js'],
+    entry: ['babel-polyfill', 'main.js'],
 
     output: {
         path: outputPath + publicPath,
@@ -94,8 +92,14 @@ module.exports = {
 
     module: {
         loaders: [
+             {
+                enforce: "pre",
+                test: /\.(js|jsx)$/,
+                loader: 'eslint-loader',
+                exclude: /(node_modules|bower_components)/
+              },
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/
             },
@@ -103,10 +107,7 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader',
-                query: {
-                    presets: ['es2015', 'react', 'babel-preset-stage-3']
-                }
+                loader: 'babel-loader'
             },
             {
               test: /\.scss$/i,
